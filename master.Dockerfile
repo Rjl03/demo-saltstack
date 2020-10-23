@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:latest
 LABEL Author="sajal.shres@gmail.com"
 
 RUN mkdir -p /docker-saltstack
@@ -10,8 +10,9 @@ RUN mkdir -p /srv/salt/states
 
 WORKDIR /docker-saltstack
 
+
 RUN yum install -y epel-release && \
-    yum install -y http://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
+    yum install -y https://repo.saltstack.com/py3/redhat/salt-py3-repo-latest.el8.noarch.rpm && \
     yum update -y && \
     yum install -y virt-what salt-master && \
     yum clean all && \

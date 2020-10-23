@@ -4,7 +4,7 @@ services:
   salt-master:
     container_name: salt-master
     hostname: salt-master
-    image: sajalshres/demo-saltstack:master
+    image: demo-saltstack:master
     networks: 
       saltnetwork:
        aliases: 
@@ -13,7 +13,7 @@ services:
   salt-minion1:
     container_name: MINION1
     hostname: MINION1
-    image: sajalshres/demo-saltstack:minion
+    image: demo-saltstack:minion
     depends_on:
       - salt-master
     networks: 
@@ -24,7 +24,7 @@ services:
   salt-minion2:
     container_name: MINION2
     hostname: MINION2
-    image: sajalshres/demo-saltstack:minion
+    image: demo-saltstack:minion
     depends_on:
       - salt-master
     networks: 
